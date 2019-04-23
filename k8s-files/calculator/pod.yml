@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: calculator
+spec:
+  containers:
+    - name: service
+      image: quay.io/kubernetes-workshop/calculator:latest
+      ports:
+        - containerPort: 8080
