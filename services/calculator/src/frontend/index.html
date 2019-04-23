@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function calculate() {
+        var expression = document.getElementById('expression').value;
+        var submitButton = document.getElementById('button-submit');
+        var result = document.getElementById('result');
+
+        submitButton.disabled = true;
+        submitButton.innerText = 'Calculating...';
+        var request = new XMLHttpRequest();
+        request.open('GET', 'api/calculate?expression=' + encodeURIComponent(expression), false);
+        try {
+          request.send();
+          submitButton.disabled = false;
+          submitButton.innerText = 'Calculate!';
+
+          var evalResult = JSON.parse(request.response).result;
+          result.style.display = 'block';
+          result.className = 'alert alert-success';
+          result.innerText = 'Result: ' + evalResult;
+        } catch (e) {
+          submitButton.disabled = false;
+          submitButton.innerText = 'Calculate!';
+
+          result.style.display = 'block';
+          result.className = 'alert alert-danger';
+          result.innerText = 'Something went horribly wrong: ' + e.name + ': ' + e.message;
+        }
+      }
+    </script>
+    <style rel="stylesheet">
+      .container {
+        width: auto;
+        max-width: 680px;
+        padding: 0 15px;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column h-100">
+    <main role="main" class="flex-shrink-0">
+      <div class="container">
+        <h1 class="mt-5">Calculator Server 1.0-beta1</h1>
+        <p class="lead">
+          This service provides a basic calculator functionality.<br />
+          It will help you to solve common math problems.
+        </p>
+        <div class="form-group">
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="text"
+              id="expression"
+              placeholder="An expression e.g. 200^2"
+              onkeyup="if(event.key == 'Enter') { calculate(); }"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-primary" id="button-submit" onclick="calculate()">Calculate!</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-success" role="alert" id="result" style="display:none;"></div>
+      </div>
+    </main>
+  </body>
+</html>
