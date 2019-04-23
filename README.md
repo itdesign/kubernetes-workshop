@@ -15,3 +15,9 @@ Under `services/` are all services with their source code and a Dockerfile to bu
 ### Kubernetes files
 
 Under `k8s-files/` you can find all resource specifications for our services we use during the workshop.
+
+### Documentation
+
+The `docs/` folder contains all documentation available to the participants of the Workshop.
+
+Available at [meisterplan.github.io/kubernetes-workshop](https://meisterplan.github.io/kubernetes-workshop/).
