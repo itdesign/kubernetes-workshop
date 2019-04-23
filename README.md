@@ -1,1 +1,1 @@
-# kubernetes-workshop
+# Kubernetes Workshop
