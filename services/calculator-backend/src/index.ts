@@ -1,13 +1,14 @@
 import express from 'express';
+import swaggerUi from 'swagger-ui-express';
+
 import { calculator } from './backend/calculator';
-import path from 'path';
+import { swaggerJson } from './config/swagger';
 
 const port = process.env.PORT || '8080';
 const app: express.Express = express();
 
-app.get('/', (req: express.Request, resp: express.Response) => {
-  resp.sendFile(path.join(__dirname + '/../src/frontend/index.html'));
-});
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerJson));
+app.get('/', (req: express.Request, resp: express.Response) => resp.redirect('/docs'));
 
 app.get('/api/calculate', async (req: express.Request, resp: express.Response) => {
   const result = await calculator(req.query.expression);
