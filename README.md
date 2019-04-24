@@ -10,7 +10,7 @@ The repository contains all sources used in the hands-on parts of the workshop.
 
 Under `services/` are all services with their source code and a Dockerfile to built the images.
 
-- [calculator server](services/calculator/) - Small demonstration service to do the first steps with Kubernetes
+- [calculator backend](services/calculator-backend/) - Small demonstration service to do the first steps with Kubernetes
 
 ### Kubernetes files
 
