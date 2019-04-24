@@ -16,10 +16,10 @@ app.get('/', (_, resp: express.Response) => resp.send(renderIndex()));
 
 app.get('/result', async (req: express.Request, resp: express.Response) => {
   try {
-    const response = await axios.get<{ result: number }>(
+    const response = await axios.get<{ result: number; instance: string }>(
       `${calculatorServerBaseUrl}/api/calculate?expression=${encodeURIComponent(req.query.expression)}`
     );
-    resp.send(renderResult({ result: response.data.result }));
+    resp.send(renderResult({ result: response.data.result, backendName: response.data.instance }));
   } catch (error) {
     resp.send(renderError({ error: error.message }));
   }

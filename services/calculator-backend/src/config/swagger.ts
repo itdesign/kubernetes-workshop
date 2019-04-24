@@ -31,6 +31,9 @@ export const swaggerJson = {
               properties: {
                 result: {
                   type: 'number'
+                },
+                instance: {
+                  type: 'string'
                 }
               }
             }

@@ -4,14 +4,17 @@ import { reactRender } from '../utils/reactRoute';
 
 export interface Props {
   result: number;
+  backendName: string;
 }
 
 const ResultComponent: React.FunctionComponent<Props> = props => (
-  <BaseLayoutComponent>
+  <BaseLayoutComponent backendName={props.backendName}>
     <div className="alert alert-success">
       Result: <code>{props.result}</code>
     </div>
-    <a href="javascript:history.back()">Go Back</a>
+    <p>
+      <a href="javascript:history.back()">Go Back</a>
+    </p>
   </BaseLayoutComponent>
 );
 
