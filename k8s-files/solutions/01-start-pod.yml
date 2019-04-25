@@ -1,8 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: calculator
+  name: calculator-server
 spec:
+  restartPolicy: Never
   containers:
     - name: service
       image: quay.io/kubernetes-workshop/calculator-backend:latest
