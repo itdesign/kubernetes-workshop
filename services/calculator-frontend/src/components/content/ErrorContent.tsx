@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseLayout } from '../BaseLayout';
-import { reactRender } from '../../utils/reactRoute';
+import { reactRender } from '../../utils/reactRender';
 
 export interface Props {
   error: string;

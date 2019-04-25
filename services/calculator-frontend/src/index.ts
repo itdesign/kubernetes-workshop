@@ -1,26 +1,41 @@
 import express from 'express';
-import axios from 'axios';
 
 import { renderCalculationResult } from './components/content/CacluclationResultContent';
 import { renderIndex } from './components/content/IndexContent';
 import { renderError } from './components/content/ErrorContent';
-
-const port = process.env.PORT || '8081';
-const calculatorServerBaseUrl = process.env.CALCULATOR_BACKEND_BASE_URL || 'http://localhost:8080';
+import { requestCalculate, requestHistory } from './utils/backend';
+import { renderHistory } from './components/content/HistoryContent';
+import { isHistoryEnabled } from './utils/appVersion';
 
 const app: express.Express = express();
 
+const port = process.env.PORT || '3000';
 app.listen(port, () => console.log(`Started calculator service on port ${port}.`));
 
 app.get('/', (_, resp: express.Response) => resp.send(renderIndex()));
 
 app.get('/result', async (req: express.Request, resp: express.Response) => {
-  try {
-    const response = await axios.get<{ result: number; instance: string }>(
-      `${calculatorServerBaseUrl}/api/calculate?expression=${encodeURIComponent(req.query.expression)}`
+  const response = await requestCalculate(req.query.expression);
+  if (response.type == 'SUCCESS') {
+    resp.send(
+      renderCalculationResult({
+        expression: req.query.expression,
+        result: response.data.result,
+        backendInstance: response.data.instance
+      })
     );
-    resp.send(renderCalculationResult({ result: response.data.result, backendInstance: response.data.instance }));
-  } catch (error) {
-    resp.send(renderError({ error: error.message }));
+  } else {
+    resp.send(renderError({ error: response.error }));
   }
 });
+
+if (isHistoryEnabled()) {
+  app.get('/history', async (req: express.Request, resp: express.Response) => {
+    const response = await requestHistory();
+    if (response.type == 'SUCCESS') {
+      resp.send(renderHistory({ records: response.data.records, backendInstance: response.data.instance }));
+    } else {
+      resp.send(renderError({ error: response.error }));
+    }
+  });
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import os from 'os';
 import { Footer } from './Footer';
+import { appVersion } from '../utils/appVersion';
 
 export interface Props {
   backendInstance?: string;
@@ -21,7 +22,7 @@ export const BaseLayout: React.FunctionComponent<Props> = props => (
     <body className="d-flex flex-column h-100">
       <main role="main" className="flex-shrink-0">
         <div className="container" style={{ width: 'auto', maxWidth: '680px', padding: '0 15px' }}>
-          <h1 className="mt-5">Calculator Frontend 1.0-beta1</h1>
+          <h1 className="mt-5">Calculator Frontend {appVersion}.0-beta1</h1>
           <p className="lead">
             This service provides a basic calculator functionality.
             <br />
