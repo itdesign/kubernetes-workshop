@@ -17,17 +17,7 @@ spec:
             - containerPort: 8080
               name: http
           resources:
-            requests:
-              cpu: 100m
-              memory: 128Mi
-            limits:
-              cpu: 1000m
-              memory: 128Mi
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8080
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8080
+            requests: { cpu: 100m, memory: 128Mi }
+            limits: { cpu: 1000m, memory: 128Mi }
+          livenessProbe: { httpGet: { path: /, port: 8080 } }
+          readinessProbe: { httpGet: { path: /, port: 8080 } }
