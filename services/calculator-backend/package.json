@@ -13,6 +13,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "mathjs": "^5.9.0",
+    "pg-promise": "^8.6.5",
     "swagger-ui-express": "^4.0.2"
   },
   "scripts": {

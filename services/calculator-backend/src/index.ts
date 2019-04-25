@@ -16,13 +16,14 @@ app.get('/', (req: express.Request, resp: express.Response) => resp.redirect('./
 
 app.get('/api/calculate', async (req: express.Request, resp: express.Response) => {
   const result = await calculator(req.query.expression);
-  addToHistory(req.query.expression, result);
+  addToHistory({ expression: req.query.expression, result });
   resp.send({ result, instance });
 });
 
-app.get('/api/history', (req: express.Request, resp: express.Response) =>
-  resp.send({ records: getHistory(), instance })
-);
+app.get('/api/history', async (req: express.Request, resp: express.Response) => {
+  const records = await getHistory();
+  resp.send({ records, instance });
+});
 
 app.listen(port, () => console.log(`Started calculator service on port ${port}.`));
 
