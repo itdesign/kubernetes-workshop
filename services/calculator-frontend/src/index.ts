@@ -6,7 +6,7 @@ import { renderIndex } from './components/IndexComponent';
 import { renderError } from './components/ErrorComponent';
 
 const port = process.env.PORT || '8081';
-const calculatorServerBaseUrl = process.env.CALCULATOR_SERVER_BASE_URL || 'http://localhost:8080';
+const calculatorServerBaseUrl = process.env.CALCULATOR_BACKEND_BASE_URL || 'http://localhost:8080';
 
 const app: express.Express = express();
 
