@@ -5,7 +5,7 @@ import { reactRender } from '../utils/reactRoute';
 
 const IndexComponent: React.FunctionComponent<{}> = () => (
   <BaseLayoutComponent>
-    <form action="/result" method="get">
+    <form action="./result" method="get">
       <div className="form-group">
         <div className="input-group">
           <input

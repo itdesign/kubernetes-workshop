@@ -11,7 +11,7 @@ const instance = os.hostname();
 const app: express.Express = express();
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerJson));
-app.get('/', (req: express.Request, resp: express.Response) => resp.redirect('/docs'));
+app.get('/', (req: express.Request, resp: express.Response) => resp.redirect('./docs'));
 
 app.get('/api/calculate', async (req: express.Request, resp: express.Response) => {
   const result = await calculator(req.query.expression);
