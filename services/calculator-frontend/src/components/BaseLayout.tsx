@@ -1,12 +1,13 @@
 import React from 'react';
 import os from 'os';
+import { Footer } from './Footer';
 
 export interface Props {
-  backendName?: string;
+  backendInstance?: string;
   children?: React.ReactNode;
 }
 
-export const BaseLayoutComponent: React.FunctionComponent<Props> = props => (
+export const BaseLayout: React.FunctionComponent<Props> = props => (
   <html>
     <head>
       <title>Calculator Frontend</title>
@@ -29,29 +30,7 @@ export const BaseLayoutComponent: React.FunctionComponent<Props> = props => (
           {props.children}
         </div>
       </main>
-      <footer
-        className="footer"
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          height: '60px',
-          lineHeight: '60px',
-          backgroundColor: '#f5f5f5'
-        }}
-      >
-        <div className="container">
-          <span className="text-muted">
-            rendered by frontend <code>{os.hostname()}</code>
-            {props.backendName && (
-              <>
-                {' '}
-                and calculated by backend <code>{props.backendName}</code>
-              </>
-            )}
-          </span>
-        </div>
-      </footer>
+      <Footer frontendInstance={os.hostname()} backendInstance={props.backendInstance} />
     </body>
   </html>
 );

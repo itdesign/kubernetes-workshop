@@ -1,9 +1,9 @@
 import express from 'express';
 import axios from 'axios';
 
-import { renderResult } from './components/ResultComponent';
-import { renderIndex } from './components/IndexComponent';
-import { renderError } from './components/ErrorComponent';
+import { renderCalculationResult } from './components/content/CacluclationResultContent';
+import { renderIndex } from './components/content/IndexContent';
+import { renderError } from './components/content/ErrorContent';
 
 const port = process.env.PORT || '8081';
 const calculatorServerBaseUrl = process.env.CALCULATOR_BACKEND_BASE_URL || 'http://localhost:8080';
@@ -19,7 +19,7 @@ app.get('/result', async (req: express.Request, resp: express.Response) => {
     const response = await axios.get<{ result: number; instance: string }>(
       `${calculatorServerBaseUrl}/api/calculate?expression=${encodeURIComponent(req.query.expression)}`
     );
-    resp.send(renderResult({ result: response.data.result, backendName: response.data.instance }));
+    resp.send(renderCalculationResult({ result: response.data.result, backendInstance: response.data.instance }));
   } catch (error) {
     resp.send(renderError({ error: error.message }));
   }

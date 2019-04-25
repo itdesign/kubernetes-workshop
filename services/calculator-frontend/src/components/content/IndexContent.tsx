@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { BaseLayoutComponent } from './LayoutComponent';
-import { reactRender } from '../utils/reactRoute';
+import { BaseLayout } from '../BaseLayout';
+import { reactRender } from '../../utils/reactRoute';
 
-const IndexComponent: React.FunctionComponent<{}> = () => (
-  <BaseLayoutComponent>
+const IndexContent: React.FunctionComponent<{}> = () => (
+  <BaseLayout>
     <form action="./result" method="get">
       <div className="form-group">
         <div className="input-group">
@@ -21,7 +21,7 @@ const IndexComponent: React.FunctionComponent<{}> = () => (
         </div>
       </div>
     </form>
-  </BaseLayoutComponent>
+  </BaseLayout>
 );
 
-export const renderIndex = () => reactRender(IndexComponent, {});
+export const renderIndex = () => reactRender(IndexContent, {});
