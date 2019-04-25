@@ -2,7 +2,7 @@ import { postgresqlStorage } from './postgresql';
 import { inmemoryStorage } from './inmemory';
 export interface HistoryRecord {
   expression: string;
-  result: number;
+  result: string;
 }
 
 export interface StorageAdapter {

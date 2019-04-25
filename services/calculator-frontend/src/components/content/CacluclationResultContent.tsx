@@ -6,7 +6,7 @@ import { SearchForm } from '../SearchForm';
 
 export interface Props {
   expression: string;
-  result: number;
+  result: string;
   backendInstance: string;
 }
 

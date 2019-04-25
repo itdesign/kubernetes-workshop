@@ -3,7 +3,7 @@ import { BaseLayout } from '../BaseLayout';
 import { reactRender } from '../../utils/reactRender';
 
 export interface Props {
-  records: [{ expression: string; result: number }];
+  records: [{ expression: string; result: string }];
   backendInstance: string;
 }
 

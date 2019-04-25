@@ -18,7 +18,7 @@ export const postgresqlStorage = (): StorageAdapter => {
 
   dbConnection.none(`CREATE TABLE IF NOT EXISTS history (
       expression TEXT NOT NULL,
-      result REAL NOT NULL
+      result TEXT NOT NULL
       )`);
 
   return {

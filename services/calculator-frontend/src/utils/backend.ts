@@ -24,7 +24,7 @@ const executeRequest = async <T>(path: string): Promise<RequestResult<T>> => {
 };
 
 export const requestCalculate = async (expression: string) =>
-  executeRequest<{ result: number; instance: string }>(`/api/calculate?expression=${encodeURIComponent(expression)}`);
+  executeRequest<{ result: string; instance: string }>(`/api/calculate?expression=${encodeURIComponent(expression)}`);
 
 export const requestHistory = async () =>
-  executeRequest<{ records: [{ expression: string; result: number }]; instance: string }>(`/api/history`);
+  executeRequest<{ records: [{ expression: string; result: string }]; instance: string }>(`/api/history`);
