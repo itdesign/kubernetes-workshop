@@ -4,6 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 
 import { calculator } from './backend/calculator';
 import { swaggerJson } from './config/swagger';
+import { getHistory, addToHistory } from './backend/history';
 
 const port = process.env.PORT || '8080';
 const instance = os.hostname();
@@ -15,8 +16,13 @@ app.get('/', (req: express.Request, resp: express.Response) => resp.redirect('./
 
 app.get('/api/calculate', async (req: express.Request, resp: express.Response) => {
   const result = await calculator(req.query.expression);
+  addToHistory(req.query.expression, result);
   resp.send({ result, instance });
 });
+
+app.get('/api/history', (req: express.Request, resp: express.Response) =>
+  resp.send({ records: getHistory(), instance })
+);
 
 app.listen(port, () => console.log(`Started calculator service on port ${port}.`));
 

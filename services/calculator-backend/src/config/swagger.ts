@@ -19,6 +19,7 @@ export const swaggerJson = {
             name: 'expression',
             in: 'query',
             type: 'string',
+
             description: 'The expression which should be used to calculate the result',
             required: true
           }
@@ -31,6 +32,39 @@ export const swaggerJson = {
               properties: {
                 result: {
                   type: 'number'
+                },
+                instance: {
+                  type: 'string'
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    '/history': {
+      get: {
+        summary: 'Show a history of the last calculations',
+        produces: ['application/json'],
+        responses: {
+          '200': {
+            description: 'History',
+            schema: {
+              type: 'object',
+              properties: {
+                records: {
+                  type: 'array',
+                  items: {
+                    type: 'object',
+                    properties: {
+                      expression: {
+                        type: 'string'
+                      },
+                      result: {
+                        type: 'number'
+                      }
+                    }
+                  }
                 },
                 instance: {
                   type: 'string'
