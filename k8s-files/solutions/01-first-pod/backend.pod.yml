@@ -9,3 +9,11 @@ spec:
       image: quay.io/kubernetes-workshop/calculator-backend:latest
       ports:
         - containerPort: 8080
+          name: http
+      resources:
+        requests:
+          cpu: 100m
+          memory: 64Mi
+        limits:
+          cpu: 1000m
+          memory: 64Mi

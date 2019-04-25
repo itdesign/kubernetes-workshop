@@ -11,6 +11,9 @@ COPY src src
 COPY tsconfig.json .
 RUN yarn build
 
-EXPOSE 8081
+ARG appVersion=1
+ENV APP_VERSION=$appVersion
+
+EXPOSE 3000
 
 CMD [ "yarn", "start" ]

@@ -1,0 +1,33 @@
+kind: Deployment
+apiVersion: apps/v1beta1
+metadata:
+  name: calculator-backend
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: calculator-backend
+    spec:
+      containers:
+        - name: service
+          image: quay.io/kubernetes-workshop/calculator-backend:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 1000m
+              memory: 128Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080

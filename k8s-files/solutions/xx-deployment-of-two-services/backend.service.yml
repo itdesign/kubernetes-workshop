@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: calculator-backend
+spec:
+  ports:
+  - port: 80
+    targetPort: http
+  selector:
+    app: calculator-backend
