@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<script>
+  function initializeVariables() {
+    var projectId = localStorage.getItem('gcloud-project-id') != '' ? localStorage.getItem('gcloud-project-id') : 'no-project-id-configured';
+    document.body.innerHTML = document.body.innerHTML.replace(new RegExp('\\$GCLOUD_PROJECT_ID', 'g'), projectId);
+
+    if (document.getElementById('gcloud-project-id')) {
+      document.getElementById('gcloud-project-id').value = localStorage.getItem('gcloud-project-id');
+      function updateGcloudProjectId() {
+        localStorage.setItem('gcloud-project-id', document.getElementById('gcloud-project-id').value);
+        window.location.reload();
+      };
+      document.getElementById('gcloud-project-id').onkeyup = function (e) { if (e.key == 'Enter') updateGcloudProjectId(); }
+      document.getElementById('gcloud-project-id-apply').onclick = updateGcloudProjectId;
+    }
+  }
+  window.onload = initializeVariables;
+</script>
+{{content}}
