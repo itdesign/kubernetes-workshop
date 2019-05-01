@@ -16,9 +16,9 @@ The Cloud Shell provides a proxy that allows us access to the resources in your 
 2. Access your cluster using the preview functionality of Cloud Shell:
    ![Screenshot of Cloud Shell preview](03-cloud-shell-preview.png)
 3. This will open a new tab with an URL like `https://8080-dot-7136354-dot-devshell.appspot.com/path`.
-   Paste the hostname into the following field, it will customize the tutorial:<br>
-   <input id="gcloud-shell-hostname" style="width:400px"> <button id="gcloud-shell-hostname-apply">Apply</button><br>
-4. Test [this link](https://$GCLOUD_SHELL_HOSTNAME/version) to verify the proxy is set up correctly. You should see a JSON response:
+   Paste the URL without path into the following field, it will customize the tutorial:<br>
+   <input id="gcloud-shell-url" style="width:400px"> <button id="gcloud-shell-url-apply">Apply</button><br>
+4. Test [this link]($GCLOUD_SHELL_URL/version) to verify the proxy is set up correctly. You should see a JSON response:
    ```json
    {
      "major": "1",

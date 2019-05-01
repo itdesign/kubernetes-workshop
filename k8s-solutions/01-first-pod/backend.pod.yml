@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: calculator-server
+  name: calculator-backend
 spec:
   restartPolicy: Never
   containers:
     - name: service
-      image: quay.io/kubernetes-workshop/calculator-backend:latest
+      image: quay.io/kubernetes-workshop/calculator-backend:v1
       ports:
         - containerPort: 8080
           name: http

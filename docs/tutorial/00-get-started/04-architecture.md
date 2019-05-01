@@ -55,7 +55,7 @@ a history of expressions and their results.
 - The service is implemented in [Node.js](https://nodejs.org/) and [Typescript](https://www.typescriptlang.org/).
 - It uses [Express](https://expressjs.com/) to provide a REST API.
 - The expressions are parsed and calculated using [Math.js](https://mathjs.org/).
-- It provides a graphical UI to test the REST API using [Swagger](https://swagger.io/), it is served under `/docs/`.
+- It provides a graphical UI to test the REST API using [Swagger](https://swagger.io/), it is served under `/`.
 - It provides an endpoint `GET /calculate` to calculate the result of a given expression.
 - It provides an endpoint `GET /history` to get a list of previous calculations.
 - It uses a database to store a history of previous calculations.
