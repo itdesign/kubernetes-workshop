@@ -17,13 +17,13 @@ layout: default
   function initializeVariables() {
     var projectId = localStorage.getItem('gcloud-project-id') ? localStorage.getItem('gcloud-project-id') : 'no-project-id-configured';
     var shellHostname = localStorage.getItem('gcloud-shell-url') ? localStorage.getItem('gcloud-shell-url') : 'http://no-url-configured';
-    document.body.innerHTML = document.body.innerHTML.replace(new RegExp('\\$GCLOUD_PROJECT_ID', 'g'), projectId);
-    document.body.innerHTML = document.body.innerHTML.replace(new RegExp('\\$GCLOUD_SHELL_URL', 'g'), shellHostname);
+    document.getElementById('main-content').innerHTML = document.getElementById('main-content').innerHTML.replace(new RegExp('\\$GCLOUD_PROJECT_ID', 'g'), projectId);
+    document.getElementById('main-content').innerHTML = document.getElementById('main-content').innerHTML.replace(new RegExp('\\$GCLOUD_SHELL_URL', 'g'), shellHostname);
 
     registerUpdateHandler('gcloud-project-id');
     registerUpdateHandler('gcloud-shell-url');
   }
 
-  window.onload = initializeVariables;
+  document.addEventListener('DOMContentLoaded', initializeVariables);
 </script>
 {{content}}
