@@ -7,7 +7,7 @@ logo: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.s
 # Use the fork until https://github.com/pmarsceill/just-the-docs/pull/97 is merged
 remote_theme: fluffyemily/just-the-docs
 aux_links:
-    "GitHub": "https://github.com/meisterplan/kubernetes-workshop"
+    "GitHub": "https://github.com/itdesign/kubernetes-workshop"
     "itdesign GmbH": "https://itdesign.de"
 
 plugins:

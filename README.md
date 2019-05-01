@@ -21,4 +21,4 @@ Under `k8s-files/` you can find all resource specifications for our services we 
 
 The `docs/` folder contains all documentation available to the participants of the Workshop.
 
-Available at [meisterplan.github.io/kubernetes-workshop](https://meisterplan.github.io/kubernetes-workshop/).
+Available at [itdesign.github.io/kubernetes-workshop](https://itdesign.github.io/kubernetes-workshop/).
