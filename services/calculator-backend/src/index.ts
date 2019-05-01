@@ -1,19 +1,19 @@
-import express from 'express';
+import express, { response } from 'express';
 import os from 'os';
-import swaggerUi from 'swagger-ui-express';
+import path from 'path';
 
 import { calculator } from './backend/calculator';
-import { swaggerJson } from './config/swagger';
 import { getHistory, addToHistory } from './backend/history';
+import { swaggerJson } from './config/swagger';
 
 const port = process.env.PORT || '8080';
 const instance = os.hostname();
 
 const app: express.Express = express();
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerJson));
-app.get('/', (req: express.Request, resp: express.Response) => resp.redirect('./docs'));
-
+app.get('/swagger.json', (_, resp: express.Response) => resp.send(swaggerJson));
+app.get('/', (_, resp: express.Response) => resp.sendFile(path.join(__dirname, '../static/index.html')));
+//
 app.get('/api/calculate', async (req: express.Request, resp: express.Response) => {
   const result = await calculator(req.query.expression);
   addToHistory({ expression: req.query.expression, result });

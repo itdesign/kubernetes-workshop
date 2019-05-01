@@ -1,0 +1,57 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui-bundle.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui-standalone-preset.js"> </script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.22.1/swagger-ui.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+
+        .download-url-wrapper,
+        .download-contents {
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div id="swagger-ui"></div>
+    <script>
+        window.onload = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            xhr.open('GET', './swagger.json', true);
+            xhr.onload = function () {
+                var spec = xhr.response;
+                spec.basePath = window.location.pathname;
+                var swaggerOptions = {
+                    spec: spec,
+                    dom_id: '#swagger-ui',
+                    deepLinking: true,
+                    presets: [
+                        SwaggerUIBundle.presets.apis,
+                        SwaggerUIStandalonePreset
+                    ],
+                    plugins: [
+                        SwaggerUIBundle.plugins.DownloadUrl
+                    ],
+                    layout: "StandaloneLayout"
+                }
+                var ui = SwaggerUIBundle(swaggerOptions)
+                window.ui = ui
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

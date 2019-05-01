@@ -8,9 +8,8 @@ export const swaggerJson = {
     version: '1.0.0',
     title: 'Calculator Server'
   },
-  basePath: '/api',
   paths: {
-    '/calculate': {
+    '/api/calculate': {
       get: {
         summary: 'Get the result of a given expression',
         produces: ['application/json'],
@@ -42,7 +41,7 @@ export const swaggerJson = {
         }
       }
     },
-    '/history': {
+    '/api/history': {
       get: {
         summary: 'Show a history of the last calculations',
         produces: ['application/json'],

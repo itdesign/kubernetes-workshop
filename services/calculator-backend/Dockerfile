@@ -8,6 +8,7 @@ COPY yarn.lock .
 RUN yarn install
 
 COPY src src
+COPY static static
 COPY tsconfig.json .
 RUN yarn build
 
