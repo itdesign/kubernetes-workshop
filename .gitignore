@@ -2,4 +2,5 @@ docs/_site/
 docs/.sass-cache/
 dist/
 node_modules/
+k8s-files/
 yarn-error.log

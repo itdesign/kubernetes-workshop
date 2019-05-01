@@ -15,7 +15,8 @@ Under `services/` are all services with their source code and a Dockerfile to bu
 
 ### Kubernetes files
 
-Under `k8s-files/` you can find all resource specifications for our services we use during the workshop.
+- Under `k8s-examples/` you can find examples for the resources we are going to create during the workshop
+- Under `k8s-solutions/` you'll find all resource specifications for our services we use during the workshop.
 
 ### Documentation
 
