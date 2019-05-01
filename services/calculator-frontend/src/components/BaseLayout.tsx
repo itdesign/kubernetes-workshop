@@ -21,7 +21,10 @@ export const BaseLayout: React.FunctionComponent<Props> = props => (
     </head>
     <body className="d-flex flex-column h-100">
       <main role="main" className="flex-shrink-0">
-        <div className="container" style={{ width: 'auto', maxWidth: '680px', padding: '0 15px' }}>
+        <div
+          className="container"
+          style={{ width: 'auto', maxWidth: '680px', padding: '0 15px', marginBottom: '70px' }}
+        >
           <h1 className="mt-5">Calculator Frontend {appVersion}.0-beta1</h1>
           <p className="lead">
             This service provides a basic calculator functionality.

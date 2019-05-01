@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const SearchForm: React.FunctionComponent<{}> = () => (
-  <form action="./result" method="get">
+  <form action="./result" method="post">
     <div className="form-group">
       <div className="input-group">
         <input

@@ -11,15 +11,16 @@ const app: express.Express = express();
 
 const port = process.env.PORT || '3000';
 app.listen(port, () => console.log(`Started calculator service on port ${port}.`));
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (_, resp: express.Response) => resp.send(renderIndex()));
 
-app.get('/result', async (req: express.Request, resp: express.Response) => {
-  const response = await requestCalculate(req.query.expression);
+app.post('/result', async (req: express.Request, resp: express.Response) => {
+  const response = await requestCalculate(req.body.expression);
   if (response.type == 'SUCCESS') {
     resp.send(
       renderCalculationResult({
-        expression: req.query.expression,
+        expression: req.body.expression,
         result: response.data.result,
         backendInstance: response.data.instance
       })
