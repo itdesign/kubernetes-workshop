@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseLayout } from '../BaseLayout';
+import { BaseLayout } from '../layout/BaseLayout';
 import { reactRender } from '../../utils/reactRender';
 
 export interface Props {

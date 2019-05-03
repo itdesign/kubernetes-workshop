@@ -1,10 +1,10 @@
 import express from 'express';
 
-import { renderCalculationResult } from './components/content/CacluclationResultContent';
-import { renderIndex } from './components/content/IndexContent';
-import { renderError } from './components/content/ErrorContent';
+import { renderCalculationResult } from './react/content/CacluclationResultContent';
+import { renderIndex } from './react/content/IndexContent';
+import { renderError } from './react/content/ErrorContent';
 import { requestCalculate, requestHistory } from './utils/backend';
-import { renderHistory } from './components/content/HistoryContent';
+import { renderHistory } from './react/content/HistoryContent';
 import { isHistoryEnabled } from './utils/appVersion';
 
 const app: express.Express = express();

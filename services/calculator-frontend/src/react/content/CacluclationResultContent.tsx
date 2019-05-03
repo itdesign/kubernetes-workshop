@@ -1,8 +1,8 @@
 import React from 'react';
-import { BaseLayout } from '../BaseLayout';
+import { BaseLayout } from '../layout/BaseLayout';
 import { reactRender } from '../../utils/reactRender';
 import { isHistoryEnabled } from '../../utils/appVersion';
-import { SearchForm } from '../SearchForm';
+import { SearchForm } from '../components/SearchForm';
 
 export interface Props {
   expression: string;
