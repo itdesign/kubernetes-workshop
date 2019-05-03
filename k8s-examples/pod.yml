@@ -9,7 +9,6 @@ spec:
       image: nginx:1.15
       ports:
         - containerPort: 80
-          name: http
       resources:
         requests: { cpu: 100m, memory: 128Mi }
         limits: { cpu: 1000m, memory: 128Mi }

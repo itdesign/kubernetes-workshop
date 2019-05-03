@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: calculator-backend
+  name: nginx-proxy
 spec:
   ports:
   - port: 80
-    targetPort: http
+    targetPort: 80
   selector:
-    app: calculator-backend
+    app: nginx-proxy
