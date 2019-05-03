@@ -1,9 +1,9 @@
 ---
-title: Cluster Setup
+title: Setup your k8s-Cluster
 parent: Get Started
 ---
 
-# Setup your Kubernetes cluster
+# Setup your Kubernetes Cluster
 
 We have to create a Kubernetes cluster that we will interact with during the tutorial.
 We will create a Kubernetes cluster v1.11 with one node per zone in the region Frankfurt.

@@ -1,9 +1,9 @@
 ---
-title: Account Setup
+title: Setup your Account
 parent: Get Started
 ---
 
-# Setup your account
+# Setup your Account
 
 Before we can begin with launching our first Kuberentes workloads we need to setup our development environment.
 
@@ -15,7 +15,7 @@ The project in Google Cloud contains all the resources you will create during th
 2. Login with your Google account used for registration
 3. Find your personal project for the workshop (`k8s-workshop-[0-9]+`)
 4. Enter your project id below, this will customize the tutorial<br>
-   <input id="gcloud-project-id"> <button id="gcloud-project-id-apply">Apply</button>
+   <input id="gcloud-project-id" placeholder="k8s-workshop-22"> <button id="gcloud-project-id-apply">Apply</button>
 
 ## Start Cloud Shell
 

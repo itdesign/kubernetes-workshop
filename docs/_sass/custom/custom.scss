@@ -6,4 +6,19 @@ $link-color: #a71417;
     border: 1px solid #ccc;
     box-shadow: 0px 0px 10px;
   }
+
+  input,
+  button {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  button {
+    background-color: #555;
+    font-size: 0.9em;
+    color: #fff;
+  }
+  ::placeholder {
+    color: #ccc;
+  }
 }

@@ -1,11 +1,11 @@
 ---
-title: Start the first pod
+title: Start the First Pod
 parent: Run the Backend
 redirect_from:
   - /tutorial/01-run-the-backend.html
 ---
 
-# Start the first pod
+# Start the First Pod
 
 ## Create YAML file
 

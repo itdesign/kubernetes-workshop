@@ -1,10 +1,10 @@
 ---
-title: Architecture overview
+title: Architecture Overview
 parent: Get Started
 ---
 
 <!-- prettier-ignore -->
-<h1>Service architecture overview</h1>
+<h1>Architecture Overview</h1>
 {: .no_toc }
 
 During the workshop we will use a calculator app to get familiar with Kubernetes.

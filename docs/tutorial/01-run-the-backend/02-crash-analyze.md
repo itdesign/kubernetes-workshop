@@ -1,9 +1,9 @@
 ---
-title: Analyze the crash
+title: Analyze the Crash
 parent: Run the Backend
 ---
 
-# Analyze the crash
+# Analyze the Crash
 
 We executed an invalid expression and the server does no longer respond.
 It is time to check what happened.

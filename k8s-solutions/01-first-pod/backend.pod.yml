@@ -9,7 +9,6 @@ spec:
       image: quay.io/kubernetes-workshop/calculator-backend:v1
       ports:
         - containerPort: 8080
-          name: http
       resources:
         requests: { cpu: 100m, memory: 128Mi }
         limits: { cpu: 1000m, memory: 128Mi }

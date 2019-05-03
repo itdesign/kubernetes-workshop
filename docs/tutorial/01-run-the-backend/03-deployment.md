@@ -1,9 +1,9 @@
 ---
-title: Create a deployment
+title: Create a Deployment
 parent: Run the Backend
 ---
 
-# Create a deployment
+# Create a Deployment
 
 The pod does not provide enough automation to revive a failed process. The deployment ensures that a given amount of pods is always started.
 
@@ -56,11 +56,10 @@ The previous command as created multiple resources.
 
 ## Access the pod
 
-The pod can be accessed like before, just replace the placeholder with your pod name.
+The pod can be accessed like before, just replace enter your pod name to get the URL:
+<input onKeyUp="document.getElementById('pod-url').innerText = '$GCLOUD_SHELL_URL/api/v1/namespaces/default/pods/'+event.target.value+'/proxy/'" placeholder="calculator-backend-557c7f66d8-zdm9b" style="width:300px">
 
-```
-$GCLOUD_SHELL_URL/api/v1/namespaces/default/pods/<your-pod-name-here>/proxy/
-```
+<pre class="highlight"><code id="pod-url">$GCLOUD_SHELL_URL/api/v1/namespaces/default/pods/&lt;pod-name&gt;/proxy/</code></pre>
 
 ## Trigger a restart
 
