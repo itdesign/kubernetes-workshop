@@ -18,7 +18,6 @@ spec:
           image: postgres:10.5
           ports:
             - containerPort: 5432
-              name: postgres
           resources:
             limits: { cpu: 1000m, memory: 256Mi }
             requests: { cpu: 100m, memory: 256Mi }
@@ -40,3 +39,14 @@ spec:
       accessModes: ["ReadWriteOnce"]
       storageClassName: "standard"
       resources: { requests: { storage: 1Gi } }
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgresql
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: postgresql

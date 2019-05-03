@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: service
-          image: quay.io/kubernetes-workshop/calculator-frontend:v1
+          image: quay.io/kubernetes-workshop/calculator-frontend:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
@@ -26,3 +26,15 @@ spec:
           env:
             - name: "CALCULATOR_BACKEND_BASE_URL"
               value: "http://calculator-backend"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: calculator-frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: http
+  selector:
+    app: calculator-frontend

@@ -23,3 +23,14 @@ spec:
             limits: { cpu: 1000m, memory: 128Mi }
           livenessProbe: { httpGet: { path: /, port: 8080 } }
           readinessProbe: { httpGet: { path: /, port: 8080 } }
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: calculator-backend
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: calculator-backend
