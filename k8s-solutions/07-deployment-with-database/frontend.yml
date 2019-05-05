@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: service
-          image: quay.io/kubernetes-workshop/calculator-frontend:v1
+          image: quay.io/kubernetes-workshop/calculator-frontend:v2
           imagePullPolicy: Always
           env:
             - name: CALCULATOR_BACKEND_BASE_URL

@@ -1,35 +1,33 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: postgresql
+  name: mysql
 spec:
-  serviceName: postgresql
+  serviceName: mysql
   selector:
     matchLabels:
-      app: postgresql
+      app: mysql
   replicas: 1
   template:
     metadata:
       labels:
-        app: postgresql 
+        app: mysql 
     spec:
       containers:
         - name: server
-          image: postgres:10.5
+          image: mysql:8.0
           env:
-            - name: POSTGRES_USER
-              value: postgres
-            - name: POSTGRES_PASSWORD
-              value: postgres
-            - name: POSTGRES_DB
-              value: calculator
+            - name: MYSQL_ROOT_PASSWORD
+              value: my-pw
+            - name: MYSQL_DATABASE
+              value: guestbook
           ports:
-            - containerPort: 5432
+            - containerPort: 3306
           resources:
             limits: { cpu: 1000m, memory: 256Mi }
             requests: { cpu: 100m, memory: 256Mi }
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
+            - mountPath: /var/lib/mysql
               name: data-storage
               subPath: data
   volumeClaimTemplates:
@@ -43,11 +41,11 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: postgresql
+  name: mysql
 spec:
   type: ClusterIP
   ports:
-  - port: 5432
-    targetPort: 5432
+  - port: 3306
+    targetPort: 3306
   selector:
-    app: postgresql
+    app: mysql

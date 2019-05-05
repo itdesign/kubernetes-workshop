@@ -87,4 +87,4 @@ You are now able to do the following things using Kubernetes:
 
 Have a look at the new version of the frontend. It looks like history does not work correctly. 😉
 
-We need to fix this! Try the [bonus chapter](../03-bonus.md).
+We need to fix this! Try the [bonus chapters](../03-bonus.md).

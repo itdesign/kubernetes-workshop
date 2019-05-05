@@ -21,7 +21,7 @@ The app basically consists of three services, the backend, a frontend and the da
 
 - The user accesses the frontend to let the application evaluate an expression.
 - The frontend uses the backend to calculate the result of the calculation.
-- The backend uses the database to store a history of calculations.
+- The backend can use an external database to store a history of calculations.
 - The backend and frontend can be scaled up and down to handle increased load.
 
 ## Frontend service
@@ -44,6 +44,14 @@ These images can be used to run a calculator frontend on Kubernetes.
 | ---------------------------------------------------- | ---------------------------------------- |
 | `quay.io/kubernetes-workshop/calculator-frontend:v1` | Version 1 with calculation functionality |
 | `quay.io/kubernetes-workshop/calculator-frontend:v2` | Version 2 with a UI to show the history  |
+
+### Configuration options
+
+The frontend service needs to know how to reach the backend service, this is done with an environment variable.
+
+| Environment variable name     | Default | Description                                  |
+| ----------------------------- | ------- | -------------------------------------------- |
+| `CALCULATOR_BACKEND_BASE_URL` | `-`     | Example could be `http://backend.local:8080` |
 
 ## Backend service
 
