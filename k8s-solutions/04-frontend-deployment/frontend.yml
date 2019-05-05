@@ -34,6 +34,6 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: http
+    targetPort: 3000
   selector:
     app: calculator-frontend
