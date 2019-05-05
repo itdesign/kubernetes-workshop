@@ -3,6 +3,6 @@ title: Bonus Tutorials
 has_children: true
 ---
 
-# Bonus tutorials
+# Bonus Tutorials
 
-Here are some bonus tutorials if we are faster than expected.
+Here are some bonus chapters if it worked faster than expected and you have some time left.
