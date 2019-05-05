@@ -1,11 +1,8 @@
 repository: meisterplan/kubernetes-workshop
 title: k8s workshop
 description: Start with us your first kubernetes workloads!
-logo: https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.svg
 
-# remote_theme: pmarsceill/just-the-docs
-# Use the fork until https://github.com/pmarsceill/just-the-docs/pull/97 is merged
-remote_theme: fluffyemily/just-the-docs
+remote_theme: pmarsceill/just-the-docs@v0.2.4
 aux_links:
     "GitHub": "https://github.com/itdesign/kubernetes-workshop"
     "itdesign GmbH": "https://itdesign.de"
