@@ -24,7 +24,7 @@ To get started copy the contents of `kubernetes-workshop/k8s-examples/deployment
 1. Under `.spec.template.spec` you'll find the similar fields like in the pod configuration, make the same changes as previously.
 2. The two new configuration items `livenessProbe` and `readinessProbe` need to configured with the correct port of your service, otherwise the health checks will fail.
 3. Ensure that the deployment has the name `calculator-backend`.
-4. Also ensure that `.template.metadata.labels.app` is set to the same value, we will need this later.
+4. Also ensure that `.template.metadata.labels.'app.kubernetes.io/name'` is set to the same value, we will need this later.
 
 ## Apply the pod definition
 

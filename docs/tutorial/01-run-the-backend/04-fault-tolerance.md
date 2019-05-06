@@ -71,7 +71,7 @@ service does only provide access to the pods that are up and running. Crashed po
    apiVersion: v1
    # ...
    ```
-3. Use the correct selector at `.spec.selectors.app` to find the pods of your `calculator-backend`. The selector
+3. Use the correct selector at `.spec.selectors.'app.kubernetes.io/name'` to find the pods of your `calculator-backend`. The selector
    is used to identify the pods which should be load balanced by the service.
 4. Use the right `targetPort` so that the service can find our backend (look at `.spec.containers[].ports`).
    ![Diagram of port definitions between services](04-service-ports.svg)

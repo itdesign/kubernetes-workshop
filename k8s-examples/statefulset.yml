@@ -6,12 +6,12 @@ spec:
   serviceName: mysql
   selector:
     matchLabels:
-      app: mysql
+      app.kubernetes.io/name: mysql
   replicas: 1
   template:
     metadata:
       labels:
-        app: mysql 
+        app.kubernetes.io/name: mysql
     spec:
       containers:
         - name: server
@@ -48,4 +48,4 @@ spec:
   - port: 3306
     targetPort: 3306
   selector:
-    app: mysql
+    app.kubernetes.io/name: mysql

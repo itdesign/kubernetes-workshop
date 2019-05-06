@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: calculator-backend
+      app.kubernetes.io/name: calculator-backend
   template:
     metadata:
       labels:
-        app: calculator-backend
+        app.kubernetes.io/name: calculator-backend
     spec:
       containers:
         - name: service
@@ -34,4 +34,4 @@ spec:
   - port: 80
     targetPort: 8080
   selector:
-    app: calculator-backend
+    app.kubernetes.io/name: calculator-backend
