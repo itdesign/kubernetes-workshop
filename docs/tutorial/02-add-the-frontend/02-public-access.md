@@ -23,6 +23,7 @@ We will now expose the frontend to the public internet.
    calculator-frontend   LoadBalancer   10.3.248.49    <pending>       80:31311/TCP   3s
    calculator-frontend   LoadBalancer   10.3.248.49    35.246.160.32   80:31311/TCP   1m
    ```
+   Enter the external IP of your service, this will customize the tutorial:<br>
    <input id="gcloud-public-ip" placeholder="35.246.160.32" style="width:400px"> <button id="gcloud-public-ip-apply">Apply</button>
 6. You can now access your frontend using [`http://$GCLOUD_PUBLIC_IP/`](http://$GCLOUD_PUBLIC_IP/).
 
