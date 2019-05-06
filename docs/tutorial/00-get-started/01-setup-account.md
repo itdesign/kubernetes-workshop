@@ -5,7 +5,7 @@ parent: Get Started
 
 # Setup your Account
 
-Before we can begin with launching our first Kuberentes workloads we need to setup our development environment.
+Before we can begin with launching our first Kubernetes workloads we need to setup our development environment.
 
 ## Open your Google Cloud project
 
@@ -31,7 +31,7 @@ We have a repository that contains examples and solutions that will help to solv
 
 1. Clone our workshop repository:
    ```bash
-   git clone https://github.com/meisterplan/kubernetes-workshop.git
+   git clone https://github.com/itdesign/kubernetes-workshop.git
    ```
 2. You should see the repository with its directories in the upper screen:
    ![Screenshot of workspace files in cloud shell](01-workspace-files.png)
