@@ -5,7 +5,7 @@ parent: Add the Frontend
 
 # Communication Insights
 
-We have now a publicly accessible service that can calculate arbitrary expression.
+We now have a publicly accessible service that can calculate arbitrary expressions.
 This chapter gives a little more insight into the communication between all components.
 
 ## Check the UI
@@ -15,7 +15,7 @@ The UI provides details about the pods used to fulfill the request. Have a look 
 ![Screenshot of the footer](03-pod-names.png)
 
 - The pod name of the backend is only displayed when communication with the backend happened.
-- You can see, the names change on every request. This is because the service routes
+- You can see the names change on every request. This is because the service routes
   the requests to the pods with [round-robin scheduling](https://en.wikipedia.org/wiki/Round-robin_scheduling).
 
 ## The network
@@ -26,7 +26,7 @@ From a network perspective this is a bit more complex:
 
 ### What happened?
 
-- By adding `type: LoadBalancer` to the service Kubernetes opened a port on each node of the cluster.
+- By adding `type: LoadBalancer` to the service, Kubernetes opened a port on each node of the cluster.
 - Google automatically provisioned a load balancer in the background that points to the opened port on all nodes.
   You can find the load balancer [here](https://console.cloud.google.com/net-services/loadbalancing/loadBalancers/list?project=$GCLOUD_PROJECT_ID) in the Google Cloud Console.
 

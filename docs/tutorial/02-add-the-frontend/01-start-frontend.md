@@ -7,13 +7,13 @@ redirect_from:
 
 # Start the Deployment
 
-Now, that we have a working backend, we will add a frontend that provides a
+Now that we have a working backend, we will add a frontend that provides a
 better user experience for our calculator app.
 
 ## Create the configuration
 
 We need a deployment and a service to deploy the frontend. This is pretty
-similar to the backend configuration. Start by copy the `backend.yml` to
+similar to the backend configuration. Start by copying the `backend.yml` to
 `frontend.yml`.
 
 ### Change the deployment
@@ -22,7 +22,7 @@ similar to the backend configuration. Start by copy the `backend.yml` to
 2. The image name for the frontend is `quay.io/kubernetes-workshop/calculator-frontend:v1`.
 3. The frontend container does listen on port `3000`.<br>
    Tip: Search for the port `8080` to find all places where the port is referenced.
-4. The frontend uses a environment variable `CALCULATOR_BACKEND_BASE_URL` which
+4. The frontend uses an environment variable `CALCULATOR_BACKEND_BASE_URL` which
    is used to configure the base url of the backend. Set this to the url of the
    backend service `http://calculator-backend`.<br>
    Use `kubernetes-workshop/k8s-examples/deployment-with-env-vars.yml` as an example on

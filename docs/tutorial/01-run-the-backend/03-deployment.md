@@ -56,7 +56,7 @@ The previous command as created multiple resources.
 
 ## Access the pod
 
-The pod can be accessed like before, just replace enter your pod name to get the URL:
+The pod can be accessed like before, just enter your pod name to get the URL:
 <input onKeyUp="document.getElementById('pod-url').innerText = '$GCLOUD_SHELL_URL/api/v1/namespaces/default/pods/'+event.target.value+'/proxy/'" placeholder="calculator-backend-557c7f66d8-zdm9b" style="width:300px">
 
 <pre class="highlight"><code id="pod-url">$GCLOUD_SHELL_URL/api/v1/namespaces/default/pods/&lt;pod-name&gt;/proxy/</code></pre>
