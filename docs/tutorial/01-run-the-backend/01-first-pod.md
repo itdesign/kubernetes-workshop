@@ -7,7 +7,12 @@ redirect_from:
 
 # Start the First Pod
 
+Now we are prepared to start our first pod.
+
 ## Create YAML file
+
+In the current console tab we have still the `kubectl proxy` command running. We will use a second
+console tab to run all further commands. Click on the `+` icon to add a second shell.
 
 Create your first YAML file which will later on be used to create the first Kubernetes resource.
 
