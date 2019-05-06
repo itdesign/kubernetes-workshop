@@ -17,7 +17,7 @@ add fault tolerance.
 
 ## Scale the deployment
 
-A deployment consists of a given amount of replicas, each a running pod with the identical configuration.
+A deployment consists of a given amount of replicas, each is a running pod with identical configuration.
 Kubernetes allows us to scale up the deployment. This can be done in two ways:
 
 ### Edit and apply the service definition
@@ -40,7 +40,7 @@ Kubernetes allows us to scale up the deployment. This can be done in two ways:
    ```
 
 Note, that when using `kubectl scale` the replica count will be overridden when applying the configuration
-again. As this only changes the configuration inside Kubernetes, not the configuration on your file system.
+again as this only changes the configuration inside Kubernetes, not the configuration on your file system.
 
 ## Add load balancing
 
@@ -71,9 +71,9 @@ service does only provide access to the pods that are up and running. Crashed po
    apiVersion: v1
    # ...
    ```
-3. Use the right selector at `.spec.selectors.app` to find the pods of your `calculator-backend`.The selector
-   is used to the pods which should be load balanced by the service.
-4. Use the right `targetPort`, that the service does find our backend (look at `.spec.containers[].ports`).
+3. Use the correct selector at `.spec.selectors.app` to find the pods of your `calculator-backend`. The selector
+   is used to identify the pods which should be load balanced by the service.
+4. Use the right `targetPort` so that the service can find our backend (look at `.spec.containers[].ports`).
    ![Diagram of port definitions between services](04-service-ports.svg)
 5. Use `kubectl apply -f k8s-files/` to apply the changes.
 6. `kubectl get services -o wide` should now show the service:
@@ -105,11 +105,11 @@ $GCLOUD_SHELL_URL/api/v1/namespaces/default/services/calculator-backend/proxy/
 
 ## Test the limits
 
-Kubernetes restarts pod when they fail, but it does this using a back-off policy when restarting the pod.
+Kubernetes restarts pods when they fail, but it does this using a back-off policy when restarting the pod.
 This means when a pod frequently crashes it is restarted at a slower rate. We can test this.
 
 1. Run an invalid expression, you'll get an error from the API.
-2. Run directly afterwards a valid expression, it will succeed.
+2. Directly afterwards run a valid expression, it will succeed.
 3. Use `kubectl get pods` to see the restart count:
    ```
    NAME                                  READY     STATUS    RESTARTS
@@ -138,5 +138,5 @@ This means when a pod frequently crashes it is restarted at a slower rate. We ca
    ```
 
 All services are now in a state called `CrashLoopBackOff` is means Kubernetes will wait a while until it
-is restarting the service. You can retry a valid expression after some moments, it should work again.
+will restart the service. You can retry a valid expression after some moments, it should work again.
 And of course the pod should then be back in the state `Running`.

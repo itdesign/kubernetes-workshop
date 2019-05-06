@@ -6,19 +6,19 @@ parent: Bonus Tutorials
 # Move State to a Database
 
 When having a detailed look at the history feature of the new frontend we can see that the
-history changes on each page refresh and does not seem to never contain all the calculations
+history changes on each page refresh and does not seem to contain all the calculations
 we made previously.
 
-The problem is, that currently the backend stores a history of calculations only inside the
-container. This means the history is not shared between the multiple instances of the backend
-and also will be deleted upon a container restart.
+The problem is that currently the backend stores a history of calculations only inside the
+ephemeral container. This means the history is not shared between the multiple instances of the 
+backend and will also be deleted upon a container restart.
 
 When you request the history from one of the backends it will only return the history of the
-calculations which where calculated by this backend (approximately one third of the total history).
+calculations which were calculated by this backend (approximately one third of the total history).
 
 This means we need to extract the history from the backend to have a truly stateless application.
 
-The backend has already a feature to configure a external PostgreSQL database a the storage layer.
+The backend already has a feature to configure an external PostgreSQL database as the storage layer.
 
 ## Start a database
 
@@ -32,7 +32,7 @@ harder to maintain and scale.
 ### Add the configuration
 
 We will now create a stateful set to start a PostgreSQL server. The server has only a single instance
-and is not recommended in production, but to get familiar with the feature this should be enough.
+and is not recommended for use in production, but to get familiar with the feature this should suffice.
 
 Copy the example `kubernetes-workshop/k8s-examples/statefulset.yml` to `k8s-files/postgresql.yml`.
 
@@ -93,4 +93,4 @@ You can now try to stop pods and check if the history is still available:
 1. Use `kubectl delete pod <pod-name>` to delete a pod.
 2. The deployment will automatically re-create a pod to fullfil the desired replica count.
 3. You can even delete the pod of our database `kubectl delete pod postgresql-0`.
-4. When the pod is successfully re-created, the history should again be available.
+4. When the pod is successfully re-created, the history should be available again.

@@ -15,7 +15,7 @@ During the workshop we will use a calculator app to get familiar with Kubernetes
 
 ## Overall architecture
 
-The app basically consists of three services, the backend, a frontend and the database.
+The app basically consists of three services: the backend, a frontend and the database.
 
 ![Architecture of services](04-service-architecture.svg)
 
@@ -27,7 +27,7 @@ The app basically consists of three services, the backend, a frontend and the da
 ## Frontend service
 
 The frontend is a UI to enter calculations and view the result. It is also possible
-to view a history all calculations.
+to view a history of all calculations.
 
 ![Screenshot of the frontend UI](04-ui-frontend.png)
 
@@ -55,7 +55,7 @@ The frontend service needs to know how to reach the backend service, this is don
 
 ## Backend service
 
-The backend is service that returns the result for a mathematical expression. It stores
+The backend is a service that returns the result for a mathematical expression. It stores
 a history of expressions and their results.
 
 ![Screenshot of the frontend UI](04-ui-backend.png)
@@ -67,8 +67,8 @@ a history of expressions and their results.
 - It provides an endpoint `GET /calculate` to calculate the result of a given expression.
 - It provides an endpoint `GET /history` to get a list of previous calculations.
 - It uses a database to store a history of previous calculations.
-  - By default it is stored in a internal [SQLite](https://www.sqlite.org/) database.
-  - It is possible to store the history in a external [PostgreSQL](https://www.postgresql.org/) database.
+  - By default it is stored in an internal [SQLite](https://www.sqlite.org/) database.
+  - It is possible to store the history in an external [PostgreSQL](https://www.postgresql.org/) database.
 
 ### Known bugs
 
