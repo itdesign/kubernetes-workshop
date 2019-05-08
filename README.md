@@ -31,7 +31,8 @@ Available at [itdesign.github.io/kubernetes-workshop](https://itdesign.github.io
   - Up to 50 users Google Identity is free: https://support.google.com/cloudidentity/answer/7295541
   - Create x accounts: user-$i@my-domain.com
 - Add another account which hosts the projects
-  - Enabled billing for the account
+  - Enable billing for the account
+  - Add at least $50 to the account to allow limit increases
   - Request a limit increase for the project limit inside the billing account (default: 5)
   - Create x projects
   - Add each project to the user in Google Identity:
