@@ -52,19 +52,20 @@ pod "calculator-backend" created
 
 ## Monitor the startup
 
-You can now monitor the startup of the pod with `kubectl get pods -w`. The flag `-w` enables the
-watch mode on every update the console is updated with the new pod state.
+You can now monitor the startup of the pod with `kubectl get pods`.
 
-You can exit the watch mode with `ctrl-c`.
+After a successful startup the output should look like this:
 
-The output can be seen as follows:
+```
+NAME                 READY     STATUS              RESTARTS  AGE
+calculator-backend   1/1       Running             0         3s
+```
+
+During the startup the console would look like this:
 
 ```
 NAME                 READY     STATUS              RESTARTS  AGE
 calculator-backend   0/1       Pending             0         0s
-calculator-backend   0/1       Pending             0         0s
-calculator-backend   0/1       ContainerCreating   0         0s
-calculator-backend   1/1       Running             0         3s
 ```
 
 ## Access the pod
@@ -85,7 +86,7 @@ To run your calculation against the API you can use the Swagger UI.
 
 1. Click on `GET /calculate`
 2. Click on `Try it out` on the right side
-3. Enter a expression into the field, e.g. `100 * sqrt(3)`
+3. Enter a valid expression into the field, e.g. `100 * sqrt(3)`
 4. Click on `Execute`
 5. The UI displays the response below:
    ![Screenshot of the response](01-api-response-success.png)
@@ -103,4 +104,4 @@ The service does not handle invalid expressions well. It crashes when an invalid
 3. Execute an invalid expression, e.g. `sqrt(Hello World)`
 4. The UI displays the error:
    ![Screenshot of the response](01-api-response-error.png)
-5. Try a valid expression, there will still be an error.
+5. Now try a valid expression, there will still be an error.

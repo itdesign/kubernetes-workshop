@@ -5,18 +5,27 @@ $link-color: #a71417;
     margin: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 14px rgba(0, 0, 0, 0.05);
   }
-  input,
-  button {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  button {
-    background-color: #555;
-    font-size: 0.9em;
-    color: #fff;
-  }
+
   ::placeholder {
     color: #ccc;
+  }
+  .customization {
+    padding: 10px;
+    background-color: rgba(167, 20, 23, 0.5);
+    color: #fff;
+    input {
+      color: #000;
+    }
+    input,
+    button {
+      padding: 5px;
+      border-radius: 5px;
+      border: 0;
+    }
+    button {
+      background-color: #555;
+      font-size: 0.9em;
+      color: #fff;
+    }
   }
 }

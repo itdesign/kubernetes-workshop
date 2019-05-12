@@ -15,10 +15,13 @@ The Cloud Shell provides a proxy that allows us access to the resources in your 
    ```
 2. Access your cluster using the preview functionality of Cloud Shell:
    ![Screenshot of Cloud Shell preview](03-cloud-shell-preview.png)
-3. This will open a new tab with an URL like `https://8080-dot-7136354-dot-devshell.appspot.com/path`.
-   Paste the URL **without** the path into the following field, it will customize the tutorial:<br>
-   <input id="gcloud-shell-url" placeholder="https://8080-dot-7136354-dot-devshell.appspot.com" style="width:400px"> <button id="gcloud-shell-url-apply">Apply</button><br>
-4. Test [this link]($GCLOUD_SHELL_URL/version) to verify the proxy is set up correctly. You should see a JSON response:
+3. This will open a new tab with an URL.
+4. <div class="customization">
+   Paste the URL <b>without</b> the path into the following field, it will customize the tutorial:<br>
+   Example: https://8080-dot-7136354-dot-devshell.appspot.com<br>
+   <input id="gcloud-shell-url" placeholder="https://8080-dot-7136354-dot-devshell.appspot.com" style="width:400px"> <button id="gcloud-shell-url-apply">Apply</button>
+   </div>
+5. Test [this link]($GCLOUD_SHELL_URL/version) to verify the proxy is set up correctly. You should see a JSON response:
    ```json
    {
      "major": "1",

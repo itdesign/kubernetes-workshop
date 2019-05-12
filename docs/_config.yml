@@ -4,8 +4,9 @@ description: Start with us your first kubernetes workloads!
 
 remote_theme: pmarsceill/just-the-docs@v0.2.4
 aux_links:
-    "GitHub": "https://github.com/itdesign/kubernetes-workshop"
-    "itdesign GmbH": "https://itdesign.de"
+    "Slides": "https://bit.ly/itd-k8s-slides"
+    "Source on GitHub": "https://github.com/itdesign/kubernetes-workshop"
+    "Jobs at itdesign GmbH": "https://itdesign.de/jobs"
 
 plugins:
   - jekyll-redirect-from

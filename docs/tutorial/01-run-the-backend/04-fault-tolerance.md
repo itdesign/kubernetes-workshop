@@ -73,10 +73,11 @@ service does only provide access to the pods that are up and running. Crashed po
    ```
 3. Use the correct selector at `.spec.selectors.'app.kubernetes.io/name'` to find the pods of your `calculator-backend`. The selector
    is used to identify the pods which should be load balanced by the service.
-4. Use the right `targetPort` so that the service can find our backend (look at `.spec.containers[].ports`).
+4. Set `.metadata.name` to `calculator-backend`.
+5. Use the right `targetPort` so that the service can find our backend (look at `.spec.containers[].ports`).
    ![Diagram of port definitions between services](04-service-ports.svg)
-5. Use `kubectl apply -f k8s-files/` to apply the changes.
-6. `kubectl get services -o wide` should now show the service:
+6. Use `kubectl apply -f k8s-files/` to apply the changes.
+7. `kubectl get services -o wide` should now show the service:
    ```
    NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE       SELECTOR
    calculator-backend   ClusterIP   10.110.74.55   <none>        80/TCP    11m       app=calculator-backend

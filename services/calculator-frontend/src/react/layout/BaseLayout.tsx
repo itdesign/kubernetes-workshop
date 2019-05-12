@@ -1,8 +1,9 @@
 import React from 'react';
 import os from 'os';
 import { Footer } from '../components/Footer';
-import { appVersion, isNewBackground } from '../../utils/appVersion';
+import { appVersion, isNewBackground, isBetaVersion } from '../../utils/appVersion';
 import { NiceBackground } from '../components/NiceBackground';
+import { BetaOverlay } from '../components/BetaOverlay';
 
 export interface Props {
   backendInstance?: string;
@@ -22,6 +23,7 @@ export const BaseLayout: React.FunctionComponent<Props> = props => (
     </head>
     <body className="d-flex flex-column h-100">
       {isNewBackground() && <NiceBackground />}
+      {isBetaVersion() && <BetaOverlay />}
       <main role="main" className="container flex-shrink-0" style={{ backgroundColor: '#fff', maxWidth: '680px' }}>
         <div className="container" style={{ padding: '0 15px', marginBottom: '70px' }}>
           <h1 className="mt-5">Calculator Frontend {appVersion}.0-beta1</h1>
