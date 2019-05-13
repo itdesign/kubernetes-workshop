@@ -39,7 +39,7 @@ Copy the example `kubernetes-workshop/k8s-examples/statefulset.yml` to `k8s-file
 The example is for a MySQL database, we need to do some changes:
 
 1. Change the name, serviceName, selector and label to `postgresql`.
-2. Change the docker image to `postgresql:10.5`.
+2. Change the docker image to `postgres:10.5`.
 3. PostgreSQL does listen on port `5432`, change the `containerPort`.
 4. PostgreSQL stored data in `/var/lib/postgresql/data` change the mount point of the volume.
 5. PostgreSQL uses other environment variables to configure user, password and database.
