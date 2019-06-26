@@ -62,5 +62,5 @@ Available at [itdesign.github.io/kubernetes-workshop](https://itdesign.github.io
     ```  
   - Delete each cluster
     ```
-    for i in {1..30}; do gcloud config set project k8s-workshop-xyz-$i -q; gcloud container clusters delete my-cluster --async; done
+    for i in {1..30}; do gcloud config set project k8s-workshop-xyz-$i -q; gcloud container clusters delete my-cluster --region europe-west3 --async; done
     ```
