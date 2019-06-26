@@ -35,8 +35,32 @@ Available at [itdesign.github.io/kubernetes-workshop](https://itdesign.github.io
   - Add at least $50 to the account to allow limit increases
   - Request a limit increase for the project limit inside the billing account (default: 5)
   - Create x projects
+    ```
+    for i in {1..30}; do gcloud projects create k8s-workshop-xyz-$i; done
+    ```
   - Add each project to the user in Google Identity:
     ```bash
-    for i in {1..30}; do gcloud projects add-iam-policy-binding k8sworkshop-xyz-$i --member user:user-$i@my-domain.com --role roles/editor; done
+    for i in {1..30}; do gcloud projects add-iam-policy-binding k8s-workshop-xyz-$i --member user:user-$i@my-domain.com --role roles/editor; done
     ```
- 
+  - Enable billing and GKE clusters for all projects
+    ```
+    for {each project} do
+      visit https://console.cloud.google.com/apis/api/container.googleapis.com/overview?project=k8s-workshop-xyz-$i
+    done
+    ```
+  - Create a Kubernetes cluster in each project
+    ```
+    for i in {1..30}; do gcloud config set project k8s-workshop-xyz-$i -q; gcloud container clusters create my-cluster --region europe-west3 --cluster-version 1.12.8-gke.10 --num-nodes 1 --async; done
+    ```
+  - Test the status of each cluster
+    ```
+    for i in {1..30}; do gcloud config set project k8s-workshop-xyz-$i -q; gcloud container clusters list; done
+    ```
+  - Test the connection to the cluster
+    ```
+    for i in {1..30}; do gcloud config set project k8s-workshop-xyz-$i -q;  gcloud container clusters get-credentials my-cluster --region europe-west3; kubectl cluster-info; done
+    ```  
+  - Delete each cluster
+    ```
+    for i in {1..30}; do gcloud config set project k8s-workshop-xyz-$i -q; gcloud container clusters delete my-cluster --async; done
+    ```
