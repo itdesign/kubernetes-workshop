@@ -11,7 +11,7 @@ Follow the guide to get it started.
 
 1. Run the following command to create your cluster:
    ```
-   gcloud container clusters create my-cluster --region europe-west3 --cluster-version 1.11.8-gke.6 --num-nodes 1
+   gcloud container clusters create my-cluster --region europe-west3 --cluster-version 1.12.8-gke.10 --num-nodes 1
    ```
 2. The output should look like the following:
    ```
@@ -20,8 +20,8 @@ Follow the guide to get it started.
    Created [https://container.googleapis.com/v1/projects/$GCLOUD_PROJECT_ID/zones/europe-west3/clusters/my-cluster].
    To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/europe-west3/my-cluster?project=$GCLOUD_PROJECT_ID
    kubeconfig entry generated for my-cluster.
-   NAME        LOCATION      MASTER_VERSION  MASTER_IP     MACHINE_TYPE   NODE_VERSION  NUM_NODES  STATUS
-   my-cluster  europe-west3  1.11.8-gke.6    35.234.67.59  n1-standard-1  1.11.8-gke.6  3          RUNNING
+   NAME        LOCATION      MASTER_VERSION  MASTER_IP     MACHINE_TYPE   NODE_VERSION   NUM_NODES  STATUS
+   my-cluster  europe-west3  1.12.8-gke.10   35.234.67.59  n1-standard-1  1.12.8-gke.10  3          RUNNING
    ```
 3. Test if `kubectl` can access the cluster, use `kubectl cluster-info`. This should return some similar output:
    ```

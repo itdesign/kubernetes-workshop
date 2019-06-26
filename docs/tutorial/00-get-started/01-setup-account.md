@@ -13,10 +13,10 @@ The project in Google Cloud contains all the resources you will create during th
 
 1. Open the [Cloud Console](https://console.cloud.google.com)
 2. Login with your Google account used for registration
-3. Find your personal project for the workshop (`k8sworkshop-stuttgart2019-[0-9]+`)
+3. Find your personal project for the workshop (`k8s-workshop-rt-2019-[0-9]+`)
 4. <div class="customization">
    Enter your project id below, this will customize the tutorial:<br>
-   <input id="gcloud-project-id" placeholder="k8sworkshop-stuttgart2019-22" style="width:300px"> <button id="gcloud-project-id-apply">Apply</button>
+   <input id="gcloud-project-id" placeholder="k8s-workshop-rt-2019-22" style="width:300px"> <button id="gcloud-project-id-apply">Apply</button>
    </div>
 
 ## Start Cloud Shell
