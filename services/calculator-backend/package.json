@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "mathjs": "^5.9.0",
+    "mathjs": "^7.5.1",
     "pg-promise": "^8.6.5"
   },
   "scripts": {
