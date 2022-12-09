@@ -10,7 +10,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mathjs": "^5.9.0",
     "pg-promise": "^8.6.5"
   },
